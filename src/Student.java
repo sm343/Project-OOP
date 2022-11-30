@@ -39,13 +39,8 @@ public class Student extends User implements Comparable<Student> {
         return SubjectsCompleted;
     }
 
-    public ArrayList<Station> preferenceList=new ArrayList<>();
+    public ArrayList<Station> preferenceList = new ArrayList<>();
 
-    public ArrayList<Station> getStationsSelected() {
-        return stationsSelected;
-    }
-
-    public ArrayList<Station> stationsSelected = new ArrayList<>();
 
     public ArrayList<Station> getPreferenceList() {
         return preferenceList;
@@ -68,9 +63,11 @@ public class Student extends User implements Comparable<Student> {
     }
 
 
-    public void addPreference() {
+    public void addPreference(String stationName) {
         //Using input output through .txt file
-    preferenceList.addAll(stationsSelected);
+        Station station = Admin.getStation(stationName);
+        if(preferenceList.contains(station))    return;
+        preferenceList.add(station);
 
     }
 

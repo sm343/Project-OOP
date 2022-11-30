@@ -6,41 +6,26 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        Student s1 = new Student("name1", "BITSEmailId1", "id", "Branch", 9.0, "password");
-        Student s2 = new Student("name2", "BITSEmailId2", "id", "Branch", 7.0, "password");
+        Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station2", "location2", 8, Arrays.stream(new String[]{"Mech", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station3", "location3", 7, Arrays.stream(new String[]{"Civil", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station4", "location4", 6, Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList()));
+
+        Student s1 = new Student("name1", "BITSEmailId1", "id", "ECE", 9.0, "password");
+        Student s2 = new Student("name2", "BITSEmailId2", "id", "ECE", 8.5, "password");
         Student s3 = new Student("name3", "BITSEmailId3", "id", "Branch", 6.0, "password");
 
+        ArrayList<Station> preferenceList=new ArrayList<>();
 
-        Station station1=new Station("bits","pilani");
-        Station station2=new Station("iit","bombay");
-        Station station3=new Station("nit","warangal");
-
-
-         ArrayList<Station> preferenceList=new ArrayList<>();
-         ArrayList<Station> stationsSelected = new ArrayList<>();
 
         Admin.students.add(s1);
         Admin.students.add(s2);
 
+        s2.addPreference("Station1");
+        s2.addPreference("Station2");
+        s2.addPreference("Station3");
 
-        Admin.stations.add(station1);
-        Admin.stations.add(station2);
-
-        s1.stationsSelected.add(station2);
-        s1.stationsSelected.add(station3);
-
-
-
-        s1.addPreference();
-
-
-        if(station2.getCgpaCutoff()>=7.5) {
-            Admin.allocate(s1);
-
-        }
-
-
-
+        Admin.allocate(s2);
 
 //        StationList.StationName.put("bits",Admin.students);
 

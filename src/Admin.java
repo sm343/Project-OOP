@@ -44,8 +44,8 @@ public class Admin extends User {
 
     public static void editStation(String name, String location) {
         for (Station station : stations) {
-            if (station.name.equals(name)) {
-                station.location = location;
+            if (station.getName().equals(name)) {
+                station.setLocation(location);
             }
         }
     }
@@ -63,15 +63,20 @@ public class Admin extends User {
         for (Student student : students) {
             for (Station station : student.preferenceList) {
                 if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
-                    if (Status.AcceptanceStatus.getStatus() != 0) {
-                        student.station = station;
-                        System.out.println("Station Alloted ! to student"+ student.getName());
-                    } else {
-                        continue;
-                    }
+                    System.out.println("Station " + station.getName() + " Alloted ! to student "+ student.getName());
+                    return;
                 }
             }
         }
+    }
+
+    public static Station getStation(String stationName) {
+        for(Station station: stations) {
+            if (station.getName().equals(stationName)) {
+                return station;
+            }
+        }
+        return null;
     }
 
     public static void printStations() {

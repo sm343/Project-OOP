@@ -2,11 +2,16 @@ import java.util.*;
 
 public class Station {
 
-    public String name;
-    public String location;
+    private String name;
+    private String location;
 
-    private float cgpaCutoff;
-    ArrayList<String> branches;
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    private double cgpaCutoff;
+
+    List<String> branches;
 
     @Override
     public String toString() {
@@ -18,11 +23,11 @@ public class Station {
                 '}';
     }
 
-    public float getCgpaCutoff() {
+    public double getCgpaCutoff() {
         return cgpaCutoff;
     }
 
-    public ArrayList<String> getBranches() {
+    public List<String> getBranches() {
         return branches;
     }
 
@@ -36,10 +41,11 @@ public class Station {
 
 
 
-    public Station(String name, String location) {
+    public Station(String name, String location, double cgpaCutoff,List<String> branches) {
         this.name = name;
         this.location = location;
-
+        this.cgpaCutoff = cgpaCutoff;
+        this.branches=branches;
     }
 
      void printStation() {
