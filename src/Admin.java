@@ -62,10 +62,10 @@ public class Admin extends User {
     public static void allocate(Student s) {
         for (Student student : students) {
             for (Station station : student.preferenceList) {
-                if (station.branches.contains(student.getBranch()) && station.cgpaCutoff <= student.getCGPA()) {
+                if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
                     if (Status.AcceptanceStatus.getStatus() != 0) {
                         student.station = station;
-                        System.out.println("Station Alloted ! ");
+                        System.out.println("Station Alloted ! to student"+ student.getName());
                     } else {
                         continue;
                     }

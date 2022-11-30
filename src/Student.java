@@ -29,14 +29,27 @@ public class Student extends User implements Comparable<Student> {
         return CGPA;
     }
 
+    public Station getStation() {
+        return station;
+    }
+
     public ArrayList<Subjects> SubjectsCompleted;
 
     public ArrayList<Subjects> getSubjectsCompleted() {
         return SubjectsCompleted;
     }
 
-    ArrayList<Station> preferenceList;
+    public ArrayList<Station> preferenceList=new ArrayList<>();
 
+    public ArrayList<Station> getStationsSelected() {
+        return stationsSelected;
+    }
+
+    public ArrayList<Station> stationsSelected = new ArrayList<>();
+
+    public ArrayList<Station> getPreferenceList() {
+        return preferenceList;
+    }
 
     public Student(String name, String BITSEmailId, String id, String Branch, double CGPA, String password) {
         super(id, password);
@@ -57,6 +70,8 @@ public class Student extends User implements Comparable<Student> {
 
     public void addPreference() {
         //Using input output through .txt file
+    preferenceList.addAll(stationsSelected);
+
     }
 
     @Override
@@ -71,8 +86,10 @@ public class Student extends User implements Comparable<Student> {
                 '}';
     }
 
-    public void CheckDetails(){
+    public void CheckDetails() {
         //Check details
+
+
     }
 
     public void updateStatus() {
