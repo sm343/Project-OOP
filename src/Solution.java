@@ -12,7 +12,7 @@ public class Solution {
         Admin.stations.add(new Station("Station4", "location4", 6, Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList()));
 
         Student s1 = new Student("name1", "BITSEmailId1", "id", "ECE", 9.0, "password");
-        Student s2 = new Student("name2", "BITSEmailId2", "id", "ECE", 8.5, "password");
+        Student s2 = new Student("name2", "BITSEmailId2", "id", "ECE", 7.5, "password");
         Student s3 = new Student("name3", "BITSEmailId3", "id", "Branch", 6.0, "password");
 
         ArrayList<Station> preferenceList=new ArrayList<>();
