@@ -9,6 +9,12 @@ public class Station {
         this.location = location;
     }
 
+    ArrayList<Student>AcceptedStudent;
+
+    public ArrayList<Student> getAcceptedStudent() {
+        return AcceptedStudent;
+    }
+
     private double cgpaCutoff;
 
     List<String> branches;
@@ -51,8 +57,6 @@ public class Station {
      void printStation() {
         System.out.println("Name: " + name + " Location: " + location );
     }
-
-
 
 
 }

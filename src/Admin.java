@@ -72,7 +72,9 @@ public class Admin extends User {
             for (Station station : student.preferenceList) {
                 if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
                     System.out.println( "Congratulations!," +station.getName() + " Allotted  to "+ student.getName());
+                       station.getAcceptedStudent().add(student) ;
                     return;
+
                 }else{
                     continue;
                 }

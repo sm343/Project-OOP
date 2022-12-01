@@ -62,6 +62,10 @@ public class Student extends User implements Comparable<Student> {
         else return 0;
     }
 
+    public void printStations() {
+        Admin.printStations();
+    }
+
 
     public void addPreference(String stationName) {
         //Using input output through .txt file
@@ -98,13 +102,7 @@ public class Student extends User implements Comparable<Student> {
 
     }
 
-    public void updateStatus(Status status) {
-            if(Status.AcceptanceStatus.getStatus()!=0) {
-                System.out.println("Accepted");
-        }else{
-                System.out.println("Rejected");
-            }
-    }
+
 
 }
 

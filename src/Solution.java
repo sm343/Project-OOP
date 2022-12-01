@@ -8,34 +8,55 @@ public class Solution {
 
         //Testing purpose of classes and methods-->
 
-        Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
-        Admin.stations.add(new Station("Station2", "location2", 8, Arrays.stream(new String[]{"Mech", "ECE", "EEE"}).toList()));
-        Admin.stations.add(new Station("Station3", "location3", 7, Arrays.stream(new String[]{"Civil", "ECE", "EEE"}).toList()));
-        Admin.stations.add(new Station("Station4", "location4", 6, Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList()));
+       /* Scanner sc=new Scanner(System.in);
 
+        System.out.println("Enter station number:");
+        String stationName=sc.nextLine();
+        System.out.println("Enter station name:");
+        String stationNumber=sc.nextLine();
+        System.out.println("Enter compulsory subjects:");
+        Arrays.asList(Subjects.values()).forEach(System.out::println);
+        System.out.println("Enter station's Branches allowed:");
 
-        Student s1 = new Student("name1", "BITSEmailId1", "id", "ECE", 9.1, "password1");
-        Student s2 = new Student("name2", "BITSEmailId2", "id2", "Mechanical", 7.2, "password2");
-        Student s3 = new Student("name3", "BITSEmailId3", "id3", "Cs", 8.3, "password3");
+        System.out.println("Enter student name:");
+        String studentName=sc.nextLine();
+        System.out.println("Enter student CG:");
+        double studentCG=sc.nextInt();
+        System.out.println("Enter student ID:");
+        String studentID=sc.nextLine();
+        System.out.println("Enter student Branch:");
+        String studentBranch=sc.nextLine();
+        System.out.println("Enter student's completed subjects:"); */
 
-
-        Admin.students.add(s1);
-        Admin.students.add(s2);
-        Admin.students.add(s3);
-
-
-        StationList.StationName.put("Station1",Admin.getStudents());
-        StationList.StationName.put("Station2",Admin.getStudents());
-        StationList.StationName.put("Station3",Admin.getStudents());
-        StationList.StationName.put("Station4",Admin.getStudents());
-
-        System.out.println("Searching station.."+StationList.getStationLocation().get("Station1"));
-
-
-
-
-
-
+//
+//        Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+//        Admin.stations.add(new Station("Station2", "location2", 8, Arrays.stream(new String[]{"Mech", "ECE", "EEE"}).toList()));
+//        Admin.stations.add(new Station("Station3", "location3", 7, Arrays.stream(new String[]{"Civil", "ECE", "EEE"}).toList()));
+//        Admin.stations.add(new Station("Station4", "location4", 6, Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList()));
+//
+//
+//        Student s1 = new Student("name1", "BITSEmailId1", "id", "ECE", 9.1, "password1");
+//        Student s2 = new Student("name2", "BITSEmailId2", "id2", "Mechanical", 7.2, "password2");
+//        Student s3 = new Student("name3", "BITSEmailId3", "id3", "Cs", 8.3, "password3");
+//
+//
+//        Admin.students.add(s1);
+//        Admin.students.add(s2);
+//        Admin.students.add(s3);
+//
+//
+//        StationList.StationName.put("Station1",Admin.getStudents());
+//        StationList.StationName.put("Station2",Admin.getStudents());
+//        StationList.StationName.put("Station3",Admin.getStudents());
+//        StationList.StationName.put("Station4",Admin.getStudents());
+//
+//        System.out.println("Searching station.."+StationList.getStationName().get("Station1"));
+//
+//
+//
+//
+//
+//
 
 
 /*********************************************

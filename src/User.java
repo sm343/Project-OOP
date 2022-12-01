@@ -1,4 +1,4 @@
-public class User {
+public class User{
     protected String userId;
     protected String password;
     boolean isLoggedIn = false;
