@@ -8,39 +8,41 @@ public class Solution {
 
         //Testing purpose of classes and methods-->
 
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.println("Enter station number:");
-//        String stationNumber = sc.nextLine();
-//        System.out.println("Enter station name:");
-//        String stationName = sc.nextLine();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter station number:");
+        String stationNumber = sc.nextLine();
+        System.out.println("Enter station name:");
+        String stationName = sc.nextLine();
 //        System.out.println("Enter compulsory subjects:");
-//     Arrays.asList(Subjects.values()).forEach(System.out::println);
-//
-//        System.out.println("Enter Branch Criterion for the Station:");
-//        String branch = sc.nextLine();
-//        ArrayList<Branches> branchAllowed = new ArrayList<>();
-//        Arrays.asList(branch.strip().split(","))
-//                .forEach((String sub) -> {
-//                    branchAllowed.add(Branches.valueOf(sub.strip()));
-//                });
-//        System.out.println(branchAllowed);
-//        System.out.println("Enter student name:");
-//        String studentName = sc.nextLine();
-//        System.out.println("Enter student CG:");
-//        double studentCG = sc.nextDouble();
-//        System.out.println("Enter student ID:");
-//        String studentID = sc.next();
-//        System.out.println("Enter student Branch:");
-//        String studentBranch = sc.next();
-//        System.out.println("Enter student's completed subjects:");
-//        String subjects = sc.nextLine();
-//        ArrayList<Subjects> subjectsCompleted = new ArrayList<>();
-//        Arrays.asList(subjects.strip().split(","))
-//                .forEach((String sub) -> {
-//                    subjectsCompleted.add(Subjects.valueOf(sub.strip()));
-//                });
-//        System.out.println(subjectsCompleted);
+//        Arrays.asList(Subjects.values()).forEach(System.out::println);
+
+        System.out.println("Enter Branch Criterion for the Station:");
+        String branch = sc.nextLine();
+        ArrayList<Branches> branchAllowed = new ArrayList<>();
+        Arrays.asList(branch.strip().split(","))
+                .forEach((String sub) -> {
+                    branchAllowed.add(Branches.valueOf(sub.strip()));
+                });
+        System.out.println(branchAllowed);
+        System.out.println("Enter student name:");
+        String studentName = sc.nextLine();
+        System.out.println("Enter student CG:");
+        double studentCG = sc.nextDouble();
+        sc.nextLine();
+        System.out.println("Enter student ID:");
+        String studentID = sc.nextLine();
+        System.out.println("Enter student Branch:");
+        String studentBranch = sc.nextLine();
+        System.out.println("Enter student's completed subjects:");
+        String subjects = sc.nextLine();
+        ArrayList<Subjects> subjectsCompleted = new ArrayList<>();
+        System.out.println(subjects);
+        Arrays.asList(subjects.strip().split(","))
+                .forEach((String sub) -> {
+                    subjectsCompleted.add(Subjects.valueOf(sub.strip()));
+                });
+        System.out.println(subjectsCompleted);
 
 
 //
@@ -54,6 +56,7 @@ public class Solution {
 //        Student s2 = new Student("name2", "BITSEmailId2", "id2", "Mechanical", 7.2, "password2");
 //        Student s3 = new Student("name3", "BITSEmailId3", "id3", "Cs", 8.3, "password3");
 //
+
 //
 //        Admin.students.add(s1);
 //        Admin.students.add(s2);
