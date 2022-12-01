@@ -7,6 +7,10 @@ public class Admin extends User {
     private String name;
     final private String BITSEmailId;
 
+    public static ArrayList<Student> getStudents() {
+        return students;
+    }
+
     private String password;
 
     public String getBITSEmailId() {
@@ -17,9 +21,13 @@ public class Admin extends User {
         return name;
     }
 
+    public static ArrayList<Station> getStations() {
+        return stations;
+    }
+
     public static ArrayList<Station> stations = new ArrayList<>();
 
-    public static ArrayList<Student> students = new ArrayList<Student>();
+    public static ArrayList<Student> students = new ArrayList<>();
 
     public Admin(String name, String BITSEmailId, String id, String password) {
         super(id, password);

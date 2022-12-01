@@ -1,8 +1,7 @@
 public class Status {
 
-
     static class AcceptanceStatus {
-        private static int status = 0;
+        private static int status;
 
         static int getStatus() {
             return status;

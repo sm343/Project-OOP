@@ -6,6 +6,39 @@ public class Solution {
 
     public static void main(String[] args) {
 
+        //Testing purpose of classes and methods-->
+
+        Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station2", "location2", 8, Arrays.stream(new String[]{"Mech", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station3", "location3", 7, Arrays.stream(new String[]{"Civil", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station4", "location4", 6, Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList()));
+
+
+        Student s1 = new Student("name1", "BITSEmailId1", "id", "ECE", 9.1, "password1");
+        Student s2 = new Student("name2", "BITSEmailId2", "id2", "Mechanical", 7.2, "password2");
+        Student s3 = new Student("name3", "BITSEmailId3", "id3", "Cs", 8.3, "password3");
+
+
+        Admin.students.add(s1);
+        Admin.students.add(s2);
+        Admin.students.add(s3);
+
+
+        StationList.StationName.put("Station1",Admin.getStudents());
+        StationList.StationName.put("Station2",Admin.getStudents());
+        StationList.StationName.put("Station3",Admin.getStudents());
+        StationList.StationName.put("Station4",Admin.getStudents());
+
+        System.out.println("Searching station.."+StationList.getStationLocation().get("Station1"));
+
+
+
+
+
+
+
+
+/*********************************************
         Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
         Admin.stations.add(new Station("Station2", "location2", 8, Arrays.stream(new String[]{"Mech", "ECE", "EEE"}).toList()));
         Admin.stations.add(new Station("Station3", "location3", 7, Arrays.stream(new String[]{"Civil", "ECE", "EEE"}).toList()));
@@ -26,6 +59,12 @@ public class Solution {
         s2.addPreference("Station3");
 
         Admin.allocate(s2);
+*************************************************/
+
+//        Station st1=new Station("bitsp","pilani",8.5,Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList());
+//        Station st2=new Station("bitsg","goa",8.0,Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList());
+//        Station st3=new Station("bitsh","hyd",7.5,Arrays.stream(new String[]{"Chemical", "ECE", "EEE"}).toList());
+//        s2.CheckDetails("bitsp");
 
 //        StationList.StationName.put("bits",Admin.students);
 

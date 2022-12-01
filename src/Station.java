@@ -52,9 +52,6 @@ public class Station {
         System.out.println("Name: " + name + " Location: " + location );
     }
 
-    public void updateDetails(){
-
-    }
 
 
 

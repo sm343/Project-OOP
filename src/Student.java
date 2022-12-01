@@ -55,7 +55,7 @@ public class Student extends User implements Comparable<Student> {
         this.SubjectsCompleted = new ArrayList<Subjects>();
 
     }
-
+//Comparing student's CG by over-riding compareTo of comparable.
     public int compareTo(Student s) {
         if (this.CGPA > s.CGPA) return -1;
         else if (this.CGPA < s.CGPA) return 1;
@@ -85,14 +85,25 @@ public class Student extends User implements Comparable<Student> {
                 '}';
     }
 
-    public void CheckDetails() {
+    public void CheckDetails(String stationName) {
         //Check details
+        Station station = Admin.getStation(stationName);
+        if(Admin.stations.contains(station)) {
+            assert station != null;
+            System.out.println("Location : "+station.getLocation());
+            System.out.println("CGPA cutoff : "+station.getCgpaCutoff());
+            System.out.println("Branches offered : "+station.getBranches());
+        }
 
 
     }
 
-    public void updateStatus() {
-
+    public void updateStatus(Status status) {
+            if(Status.AcceptanceStatus.getStatus()!=0) {
+                System.out.println("Accepted");
+        }else{
+                System.out.println("Rejected");
+            }
     }
 
 }
