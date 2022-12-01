@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-
+//Interface Search and it's methods
 interface Search {
 
     void ByName(String s);
@@ -15,6 +15,9 @@ interface Search {
 
 public class StationList implements Search {
 
+    //Overriding interface methods
+
+    //Overriding by name
     @Override
     public void ByName(String stationName) {
         for (Station station:Admin.stations) {
@@ -24,6 +27,7 @@ public class StationList implements Search {
         }
     }
 
+    //Overriding by Location
     @Override
     public void ByLocation(String stationLocation) {
         for (Station station:Admin.stations) {

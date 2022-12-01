@@ -2,31 +2,25 @@ import java.util.*;
 
 public class Station {
 
+    //Variables
     private String name;
     private String location;
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    ArrayList<Student>AcceptedStudent;
-
-    public ArrayList<Student> getAcceptedStudent() {
-        return AcceptedStudent;
-    }
+    ArrayList<Student> AcceptedStudent;
 
     private double cgpaCutoff;
 
     List<String> branches;
 
-    @Override
-    public String toString() {
-        return "Station{" +
-                "name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", cgpaCutoff=" + cgpaCutoff +
-                ", branches=" + branches +
-                '}';
+    //Setter
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    //Getters
+
+    public ArrayList<Student> getAcceptedStudent() {
+        return AcceptedStudent;
     }
 
     public double getCgpaCutoff() {
@@ -46,16 +40,31 @@ public class Station {
     }
 
 
+    //Constructor of Station
 
-    public Station(String name, String location, double cgpaCutoff,List<String> branches) {
+    public Station(String name, String location, double cgpaCutoff, List<String> branches) {
         this.name = name;
         this.location = location;
         this.cgpaCutoff = cgpaCutoff;
-        this.branches=branches;
+        this.branches = branches;
     }
 
-     void printStation() {
-        System.out.println("Name: " + name + " Location: " + location );
+    //toString Override
+
+    @Override
+    public String toString() {
+        return "Station{" +
+                "name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", cgpaCutoff=" + cgpaCutoff +
+                ", branches=" + branches +
+                '}';
+    }
+
+    //Method to print station.
+
+    void printStation() {
+        System.out.println("Name: " + name + " Location: " + location);
     }
 
 
