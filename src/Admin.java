@@ -8,9 +8,7 @@ public class Admin extends User {
     private String name;
     final private String BITSEmailId;
 
-    public static ArrayList<Station> getStations() {
-        return stations;
-    }
+
 
     public static ArrayList<Station> stations = new ArrayList<>();
 
@@ -24,6 +22,10 @@ public class Admin extends User {
 
     public String getBITSEmailId() {
         return BITSEmailId;
+    }
+
+    public static ArrayList<Station> getStations() {
+        return stations;
     }
 
     public String getName() {
