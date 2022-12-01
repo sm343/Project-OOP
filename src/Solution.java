@@ -12,10 +12,14 @@ public class Solution {
 
         System.out.println("Enter station number:");
         String stationNumber = sc.nextLine();
+
         System.out.println("Enter station name:");
         String stationName = sc.nextLine();
+
 //        System.out.println("Enter compulsory subjects:");
 //        Arrays.asList(Subjects.values()).forEach(System.out::println);
+
+        // Choose Branches from these only {CS, ECE, EEE, ENI, MECHANICAL, CiVIL, CHEMICAL}.If more than one subjects provide with comma.
 
         System.out.println("Enter Branch Criterion for the Station:");
         String branch = sc.nextLine();
@@ -25,15 +29,23 @@ public class Solution {
                     branchAllowed.add(Branches.valueOf(sub.strip()));
                 });
         System.out.println(branchAllowed);
+
+
         System.out.println("Enter student name:");
         String studentName = sc.nextLine();
+
         System.out.println("Enter student CG:");
         double studentCG = sc.nextDouble();
         sc.nextLine();
+
         System.out.println("Enter student ID:");
         String studentID = sc.nextLine();
+
         System.out.println("Enter student Branch:");
         String studentBranch = sc.nextLine();
+
+        // Choose Subjects from these only {OOP, DD, DISCO, LOGIC, M3, HRD, CONMAN}.If more than one subjects provide with comma.
+
         System.out.println("Enter student's completed subjects:");
         String subjects = sc.nextLine();
         ArrayList<Subjects> subjectsCompleted = new ArrayList<>();
