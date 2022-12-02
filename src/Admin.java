@@ -14,6 +14,7 @@ public class Admin extends User {
 
     public static ArrayList<Student> students = new ArrayList<>();
 
+
     //Getters
     public static ArrayList<Student> getStudents() {
         return students;
@@ -104,10 +105,12 @@ public class Admin extends User {
     }
 
     //Method to print stations.
-    public static void printStations() {
+    public static String printStations() {
         for (int i = 0; i < stations.size(); i++) {
             System.out.println(stations.get(i));
         }
+        return "";
     }
+
 
 }

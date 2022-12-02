@@ -4,7 +4,14 @@ public class Station {
 
     //Variables
     private String name;
+
+    private String number;
     private String location;
+
+
+    int capacity;
+
+
 
     ArrayList<Student> AcceptedStudent;
 
@@ -19,10 +26,17 @@ public class Station {
 
     //Getters
 
+
+    public int getCapacity() {
+        return capacity;
+    }
     public ArrayList<Student> getAcceptedStudent() {
         return AcceptedStudent;
     }
 
+    public String getNumber() {
+        return number;
+    }
     public double getCgpaCutoff() {
         return cgpaCutoff;
     }
@@ -42,30 +56,28 @@ public class Station {
 
     //Constructor of Station
 
-    public Station(String name, String location, double cgpaCutoff, List<String> branches) {
+    public Station(String number,String name, String location, int capacity,double cgpaCutoff, List<String> branches) {
+        this.number=number;
         this.name = name;
         this.location = location;
         this.cgpaCutoff = cgpaCutoff;
         this.branches = branches;
+        this.capacity=capacity;
     }
 
     //toString Override
+
 
     @Override
     public String toString() {
         return "Station{" +
                 "name='" + name + '\'' +
+                ", number='" + number + '\'' +
                 ", location='" + location + '\'' +
+                ", capacity=" + capacity +
+                ", AcceptedStudent=" + AcceptedStudent +
                 ", cgpaCutoff=" + cgpaCutoff +
                 ", branches=" + branches +
                 '}';
     }
-
-    //Method to print station.
-
-    void printStation() {
-        System.out.println("Name: " + name + " Location: " + location);
-    }
-
-
 }

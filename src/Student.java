@@ -2,7 +2,7 @@ import java.util.*;
 
 enum Subjects {OOP, DD, DISCO, LOGIC, M3, HRD, CONMAN}  //Enum of Subjects
 
-enum Branches {CS, ECE, EEE, ENI, MECHANICAL, CiVIL, CHEMICAL}  //Enum of Branches
+enum Branches {CS, ECE, EEE, ENI, MECHANICAL, CIVIL, CHEMICAL}  //Enum of Branches
 
 public class Student extends User implements Comparable<Student> {
 
@@ -15,7 +15,6 @@ public class Student extends User implements Comparable<Student> {
     Station station;
 
     public ArrayList<Subjects> SubjectsCompleted;
-    public ArrayList<Subjects> Branches;
 
     public ArrayList<Station> preferenceList = new ArrayList<>();
 
@@ -42,9 +41,7 @@ public class Student extends User implements Comparable<Student> {
     }
 
 
-    public ArrayList<Subjects> getBranches() {
-        return Branches;
-    }
+
 
     public ArrayList<Subjects> getSubjectsCompleted() {
         return SubjectsCompleted;

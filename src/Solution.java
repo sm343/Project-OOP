@@ -10,18 +10,33 @@ public class Solution {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter station number:");
-        String stationNumber = sc.nextLine();
+        System.out.println("Choose stations from these available stations");
 
-        System.out.println("Enter station name:");
-        String stationName = sc.nextLine();
+        Admin.stations.add(new Station("Station 1", "Jio", "Bengaluru",20,9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 2", "Reliance", "Mumbai",35,8, Arrays.stream(new String[]{"MECHANICAL", "CIVIL", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 3", "DLF", "Gurgaon",24,7, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 4", "SAIL", "Durgapur",56,7.5, Arrays.stream(new String[]{"EEE", "ECE", "CS"}).toList()));
+        Admin.stations.add(new Station("Station 5", "GAIL", "Bhopal",75,8.2, Arrays.stream(new String[]{"CHEMICAL", "CS", "MECHANICAL"}).toList()));
+        Admin.stations.add(new Station("Station 6", "BITS", "Goa",38,6.95, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 7", "NIT", "Warangal",84,6.5, Arrays.stream(new String[]{"ENI", "ECE", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 8", "IIT", "Bombay",48,8.7, Arrays.stream(new String[]{"CS", "ECE", "ENI"}).toList()));
+        Admin.stations.add(new Station("Station 9", "HONDA", "Delhi",12,7.6, Arrays.stream(new String[]{"CS", "ENI", "EEE"}).toList()));
+        Admin.stations.add(new Station("Station 10", "AUDI", "Ahmedabad",41,8.4, Arrays.stream(new String[]{"ENI", "ECE", "EEE"}).toList()));
 
-//        System.out.println("Enter compulsory subjects:");
-//        Arrays.asList(Subjects.values()).forEach(System.out::println);
+        System.out.println(Admin.printStations());
 
-        // Choose Branches from these only {CS, ECE, EEE, ENI, MECHANICAL, CiVIL, CHEMICAL}.If more than one subjects provide with comma.
 
-        System.out.println("Enter Branch Criterion for the Station:");
+        System.out.println("Enter station number");
+        String stationNumber=sc.nextLine();
+
+        System.out.println("Enter station name");
+        String stationName=sc.nextLine();
+
+        System.out.println("Enter station capacity");
+        int stationCapacity=sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Enter Branches allowed");
         String branch = sc.nextLine();
         ArrayList<Branches> branchAllowed = new ArrayList<>();
         Arrays.asList(branch.strip().split(","))
@@ -31,31 +46,126 @@ public class Solution {
         System.out.println(branchAllowed);
 
 
+
         System.out.println("Enter student name:");
         String studentName = sc.nextLine();
 
-        System.out.println("Enter student CG:");
-        double studentCG = sc.nextDouble();
-        sc.nextLine();
+        System.out.println("Enter student CGPA:");
+        double studentCGPA = sc.nextDouble();
+
 
         System.out.println("Enter student ID:");
         String studentID = sc.nextLine();
+        sc.nextLine();
 
         System.out.println("Enter student Branch:");
         String studentBranch = sc.nextLine();
 
-        // Choose Subjects from these only {OOP, DD, DISCO, LOGIC, M3, HRD, CONMAN}.If more than one subjects provide with comma.
 
         System.out.println("Enter student's completed subjects:");
+
         String subjects = sc.nextLine();
         ArrayList<Subjects> subjectsCompleted = new ArrayList<>();
         System.out.println(subjects);
         Arrays.asList(subjects.strip().split(","))
-                .forEach((String sub) -> {
-                    subjectsCompleted.add(Subjects.valueOf(sub.strip()));
-                });
+                    .forEach((String sub) -> {
+                        subjectsCompleted.add(Subjects.valueOf(sub.strip()));
+                    });
         System.out.println(subjectsCompleted);
 
+
+
+
+//
+//        System.out.println("Enter number of stations");
+//        int num=sc.nextInt();
+//
+//        for(int i=0;i<num;i++) {
+//
+//            System.out.println("Enter station number:");
+//            String stationNumber = sc.nextLine();
+//            sc.nextLine();
+//            System.out.println("Enter station name:");
+//            String stationName = sc.nextLine();
+//
+//            System.out.println("Enter station location:");
+//            String stationLocation = sc.nextLine();
+//
+//            System.out.println("Enter station CGPA cutoff:");
+//            double stationCG = sc.nextDouble();
+//            sc.nextLine();
+//
+//            System.out.println("Enter Branches allowed");
+//            String branch = sc.nextLine();
+//            ArrayList<Branches> branchAllowed = new ArrayList<>();
+//            Arrays.asList(branch.strip().split(","))
+//                    .forEach((String sub) -> {
+//                        branchAllowed.add(Branches.valueOf(sub.strip()));
+//                    });
+//            System.out.println(branchAllowed);
+//
+//            //Station st1 = new Station(stationNumber, stationName, stationLocation, stationCG, Arrays.asList(branch.strip().split(",")));
+//
+//
+//        }
+//        System.out.println("Enter student details :");
+//
+//
+//
+//            System.out.println("Enter student name:");
+//            String studentName = sc.nextLine();
+//
+//            System.out.println("Enter student CG:");
+//            double studentCGPA = sc.nextDouble();
+//            sc.nextLine();
+//
+//            System.out.println("Enter student ID:");
+//            String studentID = sc.nextLine();
+//
+//            System.out.println("Enter student Branch:");
+//            String studentBranch = sc.nextLine();
+//
+//            System.out.println("Enter student Bits Mail:");
+//            String studentMail = sc.nextLine();
+//
+//            System.out.println("Enter student password:");
+//            String studentPassword = sc.nextLine();
+//
+//            // Choose Subjects from these only {OOP, DD, DISCO, LOGIC, M3, HRD, CONMAN}.If more than one subjects provide with comma.
+//
+//            System.out.println("Enter student's completed subjects:");
+//            String subjects = sc.nextLine();
+//            ArrayList<Subjects> subjectsCompleted = new ArrayList<>();
+//            System.out.println(subjects);
+//            Arrays.asList(subjects.strip().split(","))
+//                    .forEach((String sub) -> {
+//                        subjectsCompleted.add(Subjects.valueOf(sub.strip()));
+//                    });
+//            System.out.println(subjectsCompleted);
+//
+//            Student s1 = new Student(studentName, studentMail, studentID, studentBranch, studentCGPA, studentPassword);
+//            Admin.students.add(s1);
+//            Student s2 = new Student(studentName, studentMail, studentID, studentBranch, studentCGPA, studentPassword);
+//            Admin.students.add(s2);
+//
+//
+//
+
+
+
+
+
+
+//        Station st2 = new Station(stationNumber, stationName, stationLocation, stationCG, Arrays.asList(branch.strip().split(",")));
+//        Station st3 = new Station(stationNumber, stationName, stationLocation, stationCG, Arrays.asList(branch.strip().split(",")));
+//        Station st4 = new Station(stationNumber, stationName, stationLocation, stationCG, Arrays.asList(branch.strip().split(",")));
+
+
+        //  Admin.students.add(s3);
+
+//        Admin.stations.add(st2);
+//        Admin.stations.add(st3);
+//        Admin.stations.add(st4);
 
 //
 //        Admin.stations.add(new Station("Station1", "location1", 9, Arrays.stream(new String[]{"CS", "ECE", "EEE"}).toList()));
