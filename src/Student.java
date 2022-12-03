@@ -100,7 +100,6 @@ public class Student implements Comparable<Student> {
             System.out.println("Branches offered by station: " + station.getBranches());
         }
 
-
     }
 
 

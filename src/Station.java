@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Station {
 
-    //Variables
+    //Variables.
     private final String number;
 
     private final String name;

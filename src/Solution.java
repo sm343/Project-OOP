@@ -21,6 +21,8 @@ public class Solution {
         Admin.students.add(s2);
         Admin.students.add(s3);
 
+        //Admin.addStudent("name3");
+
         //Sorting students on the basis of cgpa by overriding comparable.
 
         Collections.sort(Admin.students);
@@ -33,29 +35,32 @@ public class Solution {
 
         Station st1=new Station("Station1","Jio",10,7.5,Arrays.stream(new String[]{"CS", "EEE", "ECE"}).toList());
         Station st2=new Station("Station2","DLF",20,9.2,Arrays.stream(new String[]{"MECHANICAL", "ENI", "ECE"}).toList());
-        Station st3=new Station("Station3","Reliance",30,6.3,Arrays.stream(new String[]{"CHEMICAL", "CIVIL", "CS"}).toList());
-
+        Station st3=new Station("Station3","Reliance",30,6.3,Arrays.stream(new String[]{"CHEMICAL", "ENI", "CS"}).toList());
         //Adding station in the stations arraylist.
 
         Admin.stations.add(st1);
         Admin.stations.add(st2);
         Admin.stations.add(st3);
+        //Admin.addStation("Station3");
 
         //Adding preference list by the student.In case the same station is added ,it is neglected,else it is added to
         // the preference list.
 
 
         s1.preferenceList.add(st2);
-        s1.addPreference("DLF");
+        s1.addPreference("Jio");
         s1.addPreference("Reliance");
+
 
         s2.preferenceList.add(st2);
         s2.addPreference("Jio");
         s2.addPreference("Reliance");
 
-        s3.preferenceList.add(st1);
-        s3.addPreference("DLF");
+
+        s3.preferenceList.add(st2);
+        s3.addPreference("Jio");
         s3.addPreference("Reliance");
+
 
         System.out.println(s1.getPreferenceList());
         System.out.println(Admin.getStudents());
@@ -67,28 +72,55 @@ public class Solution {
         st2.setLocation("Kolkata");
         st3.setLocation("Agra");
 
+
+
         s1.checkDetails("Jio");
+
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
 
         //getStation method to know the stations by admin.
 
         System.out.println(Admin.getStations());
 
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
         System.out.println(Admin.getStations());
         s1.checkDetails("Jio");
+
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
 
         //Allocating student to stations according to preference list and checking on the basis of cgpa and branch whether
         //he is eligible for that particular station.
 
-        //Admin.allocate(s1);
+        Admin.allocate();
+
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
 
         //Printing all the stations
 
         Admin.printStations();
 
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
         //Any student can check details of the stations like location ,cgpa cutoff,branches offered
 
         s1.checkDetails("Reliance");
         s3.checkDetails("DLF");
+
+
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
 
         //Searching stations by name and location.
 
@@ -101,13 +133,27 @@ public class Solution {
 
         //search by location
 
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
         stationList.ByLocation("Delhi");
 
         //Checking initial capacity
 
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
         System.out.println(st3.getCapacity());
         System.out.println(st2.getCapacity());
         System.out.println(st1.getCapacity());
+
+
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
 
         //Checking allocation function
 
@@ -121,12 +167,18 @@ public class Solution {
 
             Admin.allocate();
 
-        System.out.println("Student details in the station:"+st1.getAcceptedStudent() + " ," +"capacity :"+st1.getCapacity());
-        System.out.println("Student details in the station:"+st2.getAcceptedStudent() + " ," +"capacity :"+st2.getCapacity());
-        System.out.println("Student details in the station:"+st3.getAcceptedStudent() + " ," +"capacity :"+st3.getCapacity());
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
+
+        System.out.println("Student details in the station1, Jio:"+st1.getAcceptedStudent() + " ," +"capacity :"+st1.getCapacity());
+        System.out.println("Student details in the station2, DLF:"+st2.getAcceptedStudent() + " ," +"capacity :"+st2.getCapacity());
+        System.out.println("Student details in the station3,Reliance:"+st3.getAcceptedStudent() + " ," +"capacity :"+st3.getCapacity());
 
 
-
+        System.out.println("");
+        System.out.println("----------------------------------------------");
+        System.out.println("");
 
 
 

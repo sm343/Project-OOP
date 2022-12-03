@@ -36,9 +36,9 @@ public class Admin {
     //Method to add student in student array list "students"
     public static void addStudent(String name) {
         for (Student student : students) {
-
-            students.add(student);
-
+            if (student.getName().equals(name)) {
+                students.add(student);
+            }
         }
     }
 
@@ -47,7 +47,9 @@ public class Admin {
     public static void addStation(String name) {
         for (Station station : stations) {
 
-            stations.add(station);
+            if (station.getName().equals(name)) {
+                stations.add(station);
+            }
 
         }
     }
@@ -89,11 +91,10 @@ public class Admin {
                     } catch (NullPointerException e) {
                           System.out.println(e.getMessage());
                     }
-                    return;
 
-                } else {
-                    continue;
                 }
+                continue;
+
             }
         }
     }
