@@ -76,11 +76,12 @@ public class Admin {
         for (Student student : students) {
             for (Station station : student.preferenceList) {
                 if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
-                    station.AcceptedStudent.add(student);
+//                    station.getAcceptedStudent().add(student);
                     System.out.println("Congratulations!," + station.getName() + " Allotted  to " + student.getName());
                     try {
                         station.getAcceptedStudent().add(student);
                     }catch(NullPointerException e){
+//                        System.out.println(" ");
                         System.out.println(e.getMessage());
                     }
                     return;

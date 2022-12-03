@@ -11,7 +11,7 @@ public class Station {
 
 
 
-    ArrayList<Student> AcceptedStudent;
+    private ArrayList<Student> AcceptedStudent;
 
     private final double cgpaCutoff;
 

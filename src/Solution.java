@@ -8,40 +8,51 @@ public class Solution {
 
         //Testing purpose of classes and methods-->
 
-        //Sorting students according to cgpa by overriding comparable.
+
+//        Creating instances of objects and checking the inputs and outputs by giving proper details in the constructors.
 
         Student s1 = new Student("name1",7.2,20210001,"CS",Arrays.stream(new String[]{"OOP", "DSA", "M3"}).toList());
         Student s2 = new Student("name2",8.4,20210002,"EEE",Arrays.stream(new String[]{"M1", "HRD", "DISCO"}).toList());
         Student s3 = new Student("name3",6.5,20210003,"ENI",Arrays.stream(new String[]{"M2", "MEOW", "BIO"}).toList());
 
-
+//        Adding students to "stations" arraylist
 
         Admin.students.add(s1);
         Admin.students.add(s2);
         Admin.students.add(s3);
 
-//        Collections.sort(Admin.students);
+        //Sorting students on the basis of cgpa by overriding comparable.
 
-//        for (Student s : Admin.students) {
-//            System.out.println(s);
-//        }
+        Collections.sort(Admin.students);
+
+        for (Student s : Admin.students) {
+            System.out.println(s);
+        }
+
+        //Creating instances of stations and passing the inputs through constructors to check the outputs and functionality.
 
         Station st1=new Station("Station1","Jio",10,7.5,Arrays.stream(new String[]{"CS", "EEE", "ECE"}).toList());
         Station st2=new Station("Station2","DLF",20,9.2,Arrays.stream(new String[]{"MECHANICAL", "ENI", "ECE"}).toList());
         Station st3=new Station("Station3","Reliance",30,6.3,Arrays.stream(new String[]{"CHEMICAL", "CIVIL", "CS"}).toList());
 
+        //Adding station in the stations arraylist.
+
         Admin.stations.add(st1);
         Admin.stations.add(st2);
         Admin.stations.add(st3);
 
+        //Adding preference list by the student.In case the same station is added ,it is neglected,else it is added to
+        // the preference list.
+
         s1.preferenceList.add(st2);
         s1.addPreference("DLF");
         s1.addPreference("Reliance");
-//        s1.addPreference("Reliance");
 
         System.out.println(s1.getPreferenceList());
         System.out.println(Admin.getStudents());
         s1.printStations();
+
+        //Setting location using setters
 
         st1.setLocation("Delhi");
         st2.setLocation("Kolkata");
@@ -49,15 +60,26 @@ public class Solution {
 
         s1.checkDetails("Jio");
 
+        //getStation method to know the stations by admin.
+
         System.out.println(Admin.getStations());
-
-
-        //Admin.addStation("SAIL");
 
         System.out.println(Admin.getStations());
         s1.checkDetails("Jio");
 
-        //Admin.allocate(s1);
+        //Allocating student to stations according to preference list and checking on the basis of cgpa and branch whether
+        //he is eligible for that particular station.
+
+        Admin.allocate(s1);
+
+        //Printing all the stations
+
+        Admin.printStations();
+
+        //Any student can check details of the stations like location ,cgpa cutoff,branches offered
+
+        s1.checkDetails("Reliance");
+        s3.checkDetails("DLF");
 
 
 

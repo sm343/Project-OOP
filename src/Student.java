@@ -66,7 +66,7 @@ public class Student  implements Comparable<Student> {
 
     //Add Preference method.
     public void addPreference(String stationName) {
-        //Using input output through .txt file
+
         Station station = Admin.getStation(stationName);
         if (preferenceList.contains(station)) {
             return;
