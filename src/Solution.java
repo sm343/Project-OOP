@@ -44,9 +44,18 @@ public class Solution {
         //Adding preference list by the student.In case the same station is added ,it is neglected,else it is added to
         // the preference list.
 
+
         s1.preferenceList.add(st2);
         s1.addPreference("DLF");
         s1.addPreference("Reliance");
+
+        s2.preferenceList.add(st2);
+        s2.addPreference("Jio");
+        s2.addPreference("Reliance");
+
+        s3.preferenceList.add(st1);
+        s3.addPreference("DLF");
+        s3.addPreference("Reliance");
 
         System.out.println(s1.getPreferenceList());
         System.out.println(Admin.getStudents());
@@ -70,7 +79,7 @@ public class Solution {
         //Allocating student to stations according to preference list and checking on the basis of cgpa and branch whether
         //he is eligible for that particular station.
 
-        Admin.allocate(s1);
+        //Admin.allocate(s1);
 
         //Printing all the stations
 
@@ -81,13 +90,40 @@ public class Solution {
         s1.checkDetails("Reliance");
         s3.checkDetails("DLF");
 
+        //Searching stations by name and location.
+
+        StationList stationList=new StationList();
+
+        //search by name
 
 
+        stationList.ByName("Reliance");
 
+        //search by location
 
+        stationList.ByLocation("Delhi");
 
+        //Checking initial capacity
 
+        System.out.println(st3.getCapacity());
+        System.out.println(st2.getCapacity());
+        System.out.println(st1.getCapacity());
 
+        //Checking allocation function
+
+       // Admin.allocate(s2);
+
+        //Checking station capacity after allocation of students
+
+//        System.out.println(st3.getAcceptedStudent() + " " + st3.getCapacity());
+//
+//        System.out.println(st3.getCapacity());
+
+            Admin.allocate();
+
+        System.out.println("Student details in the station:"+st1.getAcceptedStudent() + " ," +"capacity :"+st1.getCapacity());
+        System.out.println("Student details in the station:"+st2.getAcceptedStudent() + " ," +"capacity :"+st2.getCapacity());
+        System.out.println("Student details in the station:"+st3.getAcceptedStudent() + " ," +"capacity :"+st3.getCapacity());
 
 
 

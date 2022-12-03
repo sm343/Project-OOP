@@ -22,7 +22,7 @@ public class StationList implements Search {
     public void ByName(String stationName) {
         for (Station station:Admin.stations) {
             if (station.getName().equals(stationName)){
-                System.out.println("Station name:"+station.getName()+"Station Location:"+station.getLocation()+"Students:"+station.getAcceptedStudent());
+                System.out.println("Station name:"+station.getName()+", Station Location:"+station.getLocation()+", Students:"+station.getAcceptedStudent());
             }
         }
     }
@@ -32,7 +32,7 @@ public class StationList implements Search {
     public void ByLocation(String stationLocation) {
         for (Station station:Admin.stations) {
             if (station.getLocation().equals(stationLocation)){
-                System.out.println("Station name:"+station.getName()+"Station Location:"+station.getLocation()+"Students:"+station.getAcceptedStudent());
+                System.out.println("Station name:"+station.getName()+", Station Location:"+station.getLocation()+", Students:"+station.getAcceptedStudent());
             }
         }
     }

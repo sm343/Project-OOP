@@ -7,8 +7,7 @@ public class Station {
 
     private final String name;
     private String location;
-    int capacity;
-
+    protected int capacity;
 
 
     private ArrayList<Student> AcceptedStudent;
@@ -25,7 +24,9 @@ public class Station {
     //Getters
     public int getCapacity() {
         return capacity;
+
     }
+
     public ArrayList<Student> getAcceptedStudent() {
         return AcceptedStudent;
     }
@@ -46,15 +47,19 @@ public class Station {
         return location;
     }
 
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 
     //Constructor of Station
 
-    public Station(String number,String name,int capacity,double cgpaCutoff,List<String>branches){
-        this.number=number;
+    public Station(String number, String name, int capacity, double cgpaCutoff, List<String> branches) {
+        this.number = number;
         this.name = name;
-        this.capacity=capacity;
+        this.capacity = capacity;
         this.branches = branches;
-        this.cgpaCutoff=cgpaCutoff;
+        this.cgpaCutoff = cgpaCutoff;
+        this.AcceptedStudent = new ArrayList<>();
     }
 
     @Override

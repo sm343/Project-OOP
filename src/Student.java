@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class Student  implements Comparable<Student> {
+public class Student implements Comparable<Student> {
 
     //Variables
     private final String name;
     final private double CGPA;
     private final int id;
     final private String Branch;
-    private final List<String>subjectsCompleted;
+    private final List<String> subjectsCompleted;
     Station station;
     public ArrayList<Station> preferenceList = new ArrayList<>();
 
@@ -41,14 +41,14 @@ public class Student  implements Comparable<Student> {
     }
 
     //Constructor of Student
-    public Student(String name,double CGPA,int id, String Branch,List<String>subjectsCompleted) {
+    public Student(String name, double CGPA, int id, String Branch, List<String> subjectsCompleted) {
         //super(id, password);
 
         this.name = name;
-        this.CGPA=CGPA;
-        this.id=id;
+        this.CGPA = CGPA;
+        this.id = id;
         this.Branch = Branch;
-        this.subjectsCompleted=subjectsCompleted;
+        this.subjectsCompleted = subjectsCompleted;
 
     }
 

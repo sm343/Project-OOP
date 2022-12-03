@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Admin {
 
     //Variables
@@ -16,6 +17,7 @@ public class Admin {
     public String getName() {
         return name;
     }
+
     public static ArrayList<Student> getStudents() {
         return students;
     }
@@ -25,18 +27,17 @@ public class Admin {
     }
 
 
-
     //Constructor of Admin
-    public Admin(String name,  String id) {
-        this.name=name;
-        this.id=id;
+    public Admin(String name, String id) {
+        this.name = name;
+        this.id = id;
     }
 
     //Method to add student in student array list "students"
     public static void addStudent(String name) {
         for (Student student : students) {
 
-                students.add(student);
+            students.add(student);
 
         }
     }
@@ -46,7 +47,7 @@ public class Admin {
     public static void addStation(String name) {
         for (Station station : stations) {
 
-                stations.add(station);
+            stations.add(station);
 
         }
     }
@@ -72,17 +73,21 @@ public class Admin {
     }
 
     //Method to allocate station to a student on basis of cgpa and branch
-    public static void allocate(Student s) {
+    public static void allocate() {
         for (Student student : students) {
             for (Station station : student.preferenceList) {
                 if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
-//                    station.getAcceptedStudent().add(student);
                     System.out.println("Congratulations!," + station.getName() + " Allotted  to " + student.getName());
+
                     try {
                         station.getAcceptedStudent().add(student);
-                    }catch(NullPointerException e){
-//                        System.out.println(" ");
-                        System.out.println(e.getMessage());
+                        station.setCapacity(station.getCapacity() - 1);
+                        if(station.getCapacity()<=0){
+                            System.out.println("No more allotments possible.All seats are reserved.");
+                        }
+                        System.out.println("Present capacity of station :" + station.getCapacity());
+                    } catch (NullPointerException e) {
+                          System.out.println(e.getMessage());
                     }
                     return;
 
