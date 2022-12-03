@@ -3,19 +3,17 @@ import java.util.*;
 public class Station {
 
     //Variables
-    private String name;
+    private final String number;
 
-    private String number;
+    private final String name;
     private String location;
-
-
     int capacity;
 
 
 
     ArrayList<Student> AcceptedStudent;
 
-    private double cgpaCutoff;
+    private final double cgpaCutoff;
 
     List<String> branches;
 
@@ -25,8 +23,6 @@ public class Station {
     }
 
     //Getters
-
-
     public int getCapacity() {
         return capacity;
     }
@@ -34,9 +30,6 @@ public class Station {
         return AcceptedStudent;
     }
 
-    public String getNumber() {
-        return number;
-    }
     public double getCgpaCutoff() {
         return cgpaCutoff;
     }
@@ -56,26 +49,20 @@ public class Station {
 
     //Constructor of Station
 
-    public Station(String number,String name, String location, int capacity,double cgpaCutoff, List<String> branches) {
+    public Station(String number,String name,int capacity,double cgpaCutoff,List<String>branches){
         this.number=number;
         this.name = name;
-        this.location = location;
-        this.cgpaCutoff = cgpaCutoff;
-        this.branches = branches;
         this.capacity=capacity;
+        this.branches = branches;
+        this.cgpaCutoff=cgpaCutoff;
     }
-
-    //toString Override
-
 
     @Override
     public String toString() {
         return "Station{" +
-                "name='" + name + '\'' +
-                ", number='" + number + '\'' +
-                ", location='" + location + '\'' +
+                "number='" + number + '\'' +
+                ", name='" + name + '\'' +
                 ", capacity=" + capacity +
-                ", AcceptedStudent=" + AcceptedStudent +
                 ", cgpaCutoff=" + cgpaCutoff +
                 ", branches=" + branches +
                 '}';

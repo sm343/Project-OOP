@@ -1,21 +1,14 @@
 import java.util.*;
 
-enum Subjects {OOP, DD, DISCO, LOGIC, M3, HRD, CONMAN}  //Enum of Subjects
-
-enum Branches {CS, ECE, EEE, ENI, MECHANICAL, CIVIL, CHEMICAL}  //Enum of Branches
-
-public class Student extends User implements Comparable<Student> {
+public class Student  implements Comparable<Student> {
 
     //Variables
     private final String name;
-    private final String BITSEmailId;
-
-    final private String Branch;
     final private double CGPA;
+    private final int id;
+    final private String Branch;
+    private final List<String>subjectsCompleted;
     Station station;
-
-    public ArrayList<Subjects> SubjectsCompleted;
-
     public ArrayList<Station> preferenceList = new ArrayList<>();
 
     //Getters
@@ -23,43 +16,39 @@ public class Student extends User implements Comparable<Student> {
         return name;
     }
 
+    public double getCGPA() {
+        return CGPA;
+    }
 
-    public String getBITSEmailId() {
-        return BITSEmailId;
+    public int getId() {
+        return id;
     }
 
     public String getBranch() {
         return Branch;
     }
 
-    public double getCGPA() {
-        return CGPA;
+    public List<String> getSubjectsCompleted() {
+        return subjectsCompleted;
     }
 
     public Station getStation() {
         return station;
     }
 
-
-
-
-    public ArrayList<Subjects> getSubjectsCompleted() {
-        return SubjectsCompleted;
-    }
-
-
     public ArrayList<Station> getPreferenceList() {
         return preferenceList;
     }
 
     //Constructor of Student
-    public Student(String name, String BITSEmailId, String id, String Branch, double CGPA, String password) {
-        super(id, password);
-        this.BITSEmailId = BITSEmailId;
+    public Student(String name,double CGPA,int id, String Branch,List<String>subjectsCompleted) {
+        //super(id, password);
+
         this.name = name;
+        this.CGPA=CGPA;
+        this.id=id;
         this.Branch = Branch;
-        this.CGPA = CGPA;
-        this.SubjectsCompleted = new ArrayList<Subjects>();
+        this.subjectsCompleted=subjectsCompleted;
 
     }
 
@@ -87,20 +76,21 @@ public class Student extends User implements Comparable<Student> {
     }
 
     //toString Method
+
+
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
-                ", BITSEmailId='" + BITSEmailId + '\'' +
-                ", Branch='" + Branch + '\'' +
                 ", CGPA=" + CGPA +
-                ", SubjectsCompleted=" + SubjectsCompleted +
-                ", preferenceList=" + preferenceList +
+                ", id=" + id +
+                ", Branch='" + Branch + '\'' +
+                ", subjectsCompleted=" + subjectsCompleted +
                 '}';
     }
 
     //Check details of station method.
-    public void CheckDetails(String stationName) {
+    public void checkDetails(String stationName) {
         //Check details
         Station station = Admin.getStation(stationName);
         if (Admin.stations.contains(station)) {

@@ -1,14 +1,10 @@
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-public class Admin extends User {
+public class Admin {
 
     //Variables
-    private String name;
-    final private String BITSEmailId;
+    private final String name;
 
-
+    private final String id;
 
     public static ArrayList<Station> stations = new ArrayList<>();
 
@@ -16,47 +12,43 @@ public class Admin extends User {
 
 
     //Getters
+
+    public String getName() {
+        return name;
+    }
     public static ArrayList<Student> getStudents() {
         return students;
-    }
-
-
-    public String getBITSEmailId() {
-        return BITSEmailId;
     }
 
     public static ArrayList<Station> getStations() {
         return stations;
     }
 
-    public String getName() {
-        return name;
-    }
+
 
     //Constructor of Admin
-    public Admin(String name, String BITSEmailId, String id, String password) {
-        super(id, password);
-        this.BITSEmailId = BITSEmailId;
+    public Admin(String name,  String id) {
+        this.name=name;
+        this.id=id;
     }
 
     //Method to add student in student array list "students"
-    public static void addStudent(Student student) {
-        students.add(student);
+    public static void addStudent(String name) {
+        for (Student student : students) {
+
+                students.add(student);
+
+        }
     }
 
     //Method to add station in student array list "stations"
 
-    public static void addStation(Station station) {
-        stations.add(station);
+    public static void addStation(String name) {
+        for (Station station : stations) {
 
+                stations.add(station);
 
-    }
-
-    //Method to remove station in student array list "stations"
-    public static void removeStation(Station station) {
-
-        stations.remove(station);
-
+        }
     }
 
     //Method to edit station.
@@ -69,12 +61,13 @@ public class Admin extends User {
     }
 
     //toString override method
+
+
     @Override
     public String toString() {
         return "Admin{" +
                 "name='" + name + '\'' +
-                ", BITSEmailId='" + BITSEmailId + '\'' +
-                ", password='" + password + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 
@@ -83,8 +76,13 @@ public class Admin extends User {
         for (Student student : students) {
             for (Station station : student.preferenceList) {
                 if (station.branches.contains(student.getBranch()) && station.getCgpaCutoff() <= student.getCGPA()) {
+                    station.AcceptedStudent.add(student);
                     System.out.println("Congratulations!," + station.getName() + " Allotted  to " + student.getName());
-                    station.getAcceptedStudent().add(student);
+                    try {
+                        station.getAcceptedStudent().add(student);
+                    }catch(NullPointerException e){
+                        System.out.println(e.getMessage());
+                    }
                     return;
 
                 } else {
@@ -105,11 +103,10 @@ public class Admin extends User {
     }
 
     //Method to print stations.
-    public static String printStations() {
+    public static void printStations() {
         for (int i = 0; i < stations.size(); i++) {
             System.out.println(stations.get(i));
         }
-        return "";
     }
 
 
