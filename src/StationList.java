@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
 //Interface Search and it's methods
 interface Search {
 
@@ -11,7 +6,6 @@ interface Search {
     void ByLocation(String s);
 
 }
-
 
 public class StationList implements Search {
 

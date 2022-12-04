@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Admin {
 
     //Variables
@@ -84,12 +85,12 @@ public class Admin {
                     try {
                         station.getAcceptedStudent().add(student);
                         station.setCapacity(station.getCapacity() - 1);
-                        if(station.getCapacity()<=0){
+                        if (station.getCapacity() <= 0) {
                             System.out.println("No more allotments possible.All seats are reserved.");
                         }
                         System.out.println("Present capacity of station :" + station.getCapacity());
                     } catch (NullPointerException e) {
-                          System.out.println(e.getMessage());
+                        System.out.println(e.getMessage());
                     }
 
                 }
@@ -115,6 +116,5 @@ public class Admin {
             System.out.println(stations.get(i));
         }
     }
-
 
 }

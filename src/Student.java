@@ -42,7 +42,6 @@ public class Student implements Comparable<Student> {
 
     //Constructor of Student
     public Student(String name, double CGPA, int id, String Branch, List<String> subjectsCompleted) {
-        //super(id, password);
 
         this.name = name;
         this.CGPA = CGPA;
@@ -76,8 +75,6 @@ public class Student implements Comparable<Student> {
     }
 
     //toString Method
-
-
     @Override
     public String toString() {
         return "Student{" +
@@ -102,7 +99,4 @@ public class Student implements Comparable<Student> {
 
     }
 
-
 }
-
-
